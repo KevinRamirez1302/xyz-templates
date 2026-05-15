@@ -1,0 +1,11 @@
+{
+  "name": "xyz-templates",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "pnpm --filter dashboard dev",
+    "build": "pnpm --filter dashboard build",
+    "lint": "pnpm --filter dashboard lint",
+    "preview": "pnpm --filter dashboard preview"
+  }
+}
