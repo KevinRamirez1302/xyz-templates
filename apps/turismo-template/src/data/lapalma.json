@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "lastUpdated": "2026-05-14T13:00:00Z",
+    "alerts": [
+      {
+        "id": "a1",
+        "type": "warning",
+        "message": "Ruta GR-130 tramo norte: acceso restringido por trabajos forestales hasta el 20 de mayo.",
+        "active": true,
+        "createdAt": "2026-05-14T08:00:00Z"
+      },
+      {
+        "id": "a2",
+        "type": "info",
+        "message": "Festival Habaneras La Palma: del 16 al 18 de mayo en el Puerto de Tazacorte.",
+        "active": true,
+        "createdAt": "2026-05-13T10:00:00Z"
+      }
+    ]
+  },
+  "weather": {
+    "location": "Santa Cruz de La Palma",
+    "temp": 22,
+    "condition": "Soleado",
+    "icon": "sun",
+    "humidity": 65,
+    "wind": 15,
+    "uvIndex": 7,
+    "updatedAt": "2026-05-14T12:00:00Z"
+  },
+  "trails": [
+    {
+      "id": "t1",
+      "name": "Ruta de los Volcanes",
+      "distance": "16.5 km",
+      "duration": "5-6 h",
+      "difficulty": "Alta",
+      "status": "open",
+      "statusNote": "Acceso normal. Lleva ropa de abrigo.",
+      "description": "Travesía espectacular por la Cumbre Vieja, con vistas a los volcanes históricos de La Palma y el impresionante paisaje formado por las erupciones de 2021.",
+      "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+      "lat": 28.533,
+      "lng": -17.852,
+      "tags": ["Volcánico", "Vistas panorámicas", "Cumbres"]
+    },
+    {
+      "id": "t2",
+      "name": "Caldera de Taburiente",
+      "distance": "12 km",
+      "duration": "4-5 h",
+      "difficulty": "Media",
+      "status": "open",
+      "statusNote": "Sendero en buen estado. Permiso necesario.",
+      "description": "Descenso al interior de la Caldera de Taburiente, el corazón verde de La Palma. Un entorno único de bosques de laurisilva y cascadas.",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "lat": 28.716,
+      "lng": -17.869,
+      "tags": ["Laurisilva", "Cascadas", "Parque Nacional"]
+    },
+    {
+      "id": "t3",
+      "name": "GR-130 Sendero de Gran Recorrido",
+      "distance": "70 km",
+      "duration": "5-7 días",
+      "difficulty": "Muy Alta",
+      "status": "caution",
+      "statusNote": "Tramo norte cerrado (km 12-18). Usar desvío señalizado.",
+      "description": "Vuelta completa a la isla de La Palma a pie, atravesando todos sus ecosistemas, desde las costas rocosas hasta las cumbres volcánicas.",
+      "image": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&q=80",
+      "lat": 28.600,
+      "lng": -17.830,
+      "tags": ["Gran recorrido", "Circuito isla", "Multi-día"]
+    },
+    {
+      "id": "t4",
+      "name": "Ruta del Agua — Los Tilos",
+      "distance": "4.5 km",
+      "duration": "2 h",
+      "difficulty": "Baja",
+      "status": "open",
+      "statusNote": "Perfecto estado. Apto para familias.",
+      "description": "Paseo tranquilo por el bosque de laurisilva más denso de La Palma, junto a nacientes de agua y una exuberante vegetación subtropical.",
+      "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80",
+      "lat": 28.780,
+      "lng": -17.850,
+      "tags": ["Fácil", "Familiar", "Bosque"]
+    },
+    {
+      "id": "t5",
+      "name": "Roca de los Muchachos",
+      "distance": "8 km",
+      "duration": "3 h",
+      "difficulty": "Media",
+      "status": "closed",
+      "statusNote": "Cerrado por condiciones meteorológicas adversas. Reapertura estimada 18 mayo.",
+      "description": "Ascenso hasta el punto más alto de La Palma (2.426 m), hogar del mayor observatorio astronómico del hemisferio norte.",
+      "image": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
+      "lat": 28.754,
+      "lng": -17.880,
+      "tags": ["Cumbre", "Astronómico", "Vistas 360°"]
+    }
+  ],
+  "accommodation": [
+    {
+      "id": "ac1",
+      "name": "Hacienda de Abajo",
+      "type": "hotel",
+      "location": "Tazacorte",
+      "stars": 5,
+      "priceFrom": 185,
+      "occupancy": 78,
+      "available": true,
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+      "description": "Hotel boutique de lujo en una hacienda colonial del siglo XVII, con vistas al Atlántico y piscina infinita.",
+      "amenities": ["Piscina", "Spa", "Restaurante", "WiFi", "Bar"],
+      "lat": 28.640,
+      "lng": -17.928
+    },
+    {
+      "id": "ac2",
+      "name": "Casa Rural El Volcán",
+      "type": "rural",
+      "location": "Fuencaliente",
+      "stars": 4,
+      "priceFrom": 95,
+      "occupancy": 60,
+      "available": true,
+      "image": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800&q=80",
+      "description": "Casa rural con encanto en el sur de La Palma, junto a los viñedos volcánicos y las playas de arena negra.",
+      "amenities": ["Terraza", "Jardín", "BBQ", "WiFi", "Parking"],
+      "lat": 28.476,
+      "lng": -17.843
+    },
+    {
+      "id": "ac3",
+      "name": "Glamping Cumbre Verde",
+      "type": "glamping",
+      "location": "El Paso",
+      "stars": 4,
+      "priceFrom": 145,
+      "occupancy": 45,
+      "available": true,
+      "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+      "description": "Tiendas de lujo en el corazón del pinar canario, con acceso directo a la Caldera de Taburiente y cielos estrellados.",
+      "amenities": ["Desayuno incluido", "Telescopio", "Fogata", "WiFi"],
+      "lat": 28.680,
+      "lng": -17.845
+    },
+    {
+      "id": "ac4",
+      "name": "Apartamentos Puerto Naos",
+      "type": "apartment",
+      "location": "Puerto Naos",
+      "stars": 3,
+      "priceFrom": 70,
+      "occupancy": 90,
+      "available": false,
+      "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "description": "Apartamentos modernos a pie de playa en la zona de Puerto Naos, con la mejor playa de arena negra de La Palma.",
+      "amenities": ["Piscina comunitaria", "Cocina", "Terraza", "WiFi"],
+      "lat": 28.591,
+      "lng": -17.951
+    }
+  ],
+  "experiences": [
+    {
+      "id": "ex1",
+      "name": "Observación Astronómica en el Roque",
+      "category": "Naturaleza",
+      "duration": "3 h",
+      "price": 35,
+      "priceUnit": "persona",
+      "description": "Noche bajo las estrellas en el observatorio del Roque de los Muchachos, con guía experto y telescopios de alta gama.",
+      "image": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
+      "tags": ["Astronomía", "Nocturno", "Guiado"],
+      "featured": true
+    },
+    {
+      "id": "ex2",
+      "name": "Ruta de Vinos Volcánicos",
+      "category": "Gastronomía",
+      "duration": "4 h",
+      "price": 55,
+      "priceUnit": "persona",
+      "description": "Visita a las bodegas de Fuencaliente sobre suelo volcánico, con cata de vinos DO La Palma y maridaje con productos locales.",
+      "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80",
+      "tags": ["Vinos", "Gastronomía", "Fuencaliente"],
+      "featured": true
+    },
+    {
+      "id": "ex3",
+      "name": "Buceo en Arrecifes Volcánicos",
+      "category": "Aventura",
+      "duration": "2.5 h",
+      "price": 65,
+      "priceUnit": "persona",
+      "description": "Inmersión en los fondos submarinos más ricos de Canarias, con formaciones lávicas únicas y diversidad marina excepcional.",
+      "image": "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800&q=80",
+      "tags": ["Buceo", "Submarino", "Costa"],
+      "featured": false
+    },
+    {
+      "id": "ex4",
+      "name": "Taller de Artesanía Palmera",
+      "category": "Cultura",
+      "duration": "2 h",
+      "price": 25,
+      "priceUnit": "persona",
+      "description": "Aprende el arte tradicional del bordado y la cestería de La Palma con artesanas locales en Santa Cruz.",
+      "image": "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800&q=80",
+      "tags": ["Artesanía", "Cultura", "Tradicional"],
+      "featured": false
+    },
+    {
+      "id": "ex5",
+      "name": "Senderismo Guiado Laurisilva",
+      "category": "Naturaleza",
+      "duration": "5 h",
+      "price": 40,
+      "priceUnit": "persona",
+      "description": "Excursión guiada por el bosque milenario de laurisilva de Los Tilos, Reserva de la Biosfera de la UNESCO.",
+      "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80",
+      "tags": ["Senderismo", "Guiado", "UNESCO"],
+      "featured": true
+    }
+  ],
+  "events": [
+    {
+      "id": "ev1",
+      "title": "Festival de Habaneras de La Palma",
+      "date": "2026-05-16",
+      "endDate": "2026-05-18",
+      "location": "Puerto de Tazacorte",
+      "category": "Música",
+      "description": "Festival internacional de habaneras y música de mar, con grupos de toda España y América Latina.",
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80",
+      "free": true,
+      "active": true
+    },
+    {
+      "id": "ev2",
+      "title": "Mercado Artesanal de Santa Cruz",
+      "date": "2026-05-17",
+      "location": "Plaza de España, Santa Cruz de La Palma",
+      "category": "Mercado",
+      "description": "Mercado mensual de artesanía local con productos típicos palmeros: quesos, vinos, miel y bordados.",
+      "image": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80",
+      "free": true,
+      "active": true
+    },
+    {
+      "id": "ev3",
+      "title": "Curso de Astronomía — Roque de los Muchachos",
+      "date": "2026-05-22",
+      "endDate": "2026-05-23",
+      "location": "Observatorio del Roque de los Muchachos",
+      "category": "Ciencia",
+      "description": "Curso intensivo de dos días de astronomía práctica en uno de los mejores observatorios del mundo.",
+      "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80",
+      "free": false,
+      "price": 120,
+      "active": true
+    },
+    {
+      "id": "ev4",
+      "title": "Feria Gastronómica del Vino Volcánico",
+      "date": "2026-05-30",
+      "location": "Fuencaliente",
+      "category": "Gastronomía",
+      "description": "Cata y exposición de los mejores vinos con denominación de origen La Palma, producidos en suelo volcánico.",
+      "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80",
+      "free": false,
+      "price": 15,
+      "active": true
+    },
+    {
+      "id": "ev5",
+      "title": "Noches de Cultura en el Casco Histórico",
+      "date": "2026-06-05",
+      "location": "Casco histórico de Santa Cruz de La Palma",
+      "category": "Cultura",
+      "description": "Paseos nocturnos teatralizados por el centro histórico renacentista de Santa Cruz, declarado Conjunto Histórico-Artístico.",
+      "image": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
+      "free": false,
+      "price": 10,
+      "active": true
+    }
+  ],
+  "stats": {
+    "visitorsThisMonth": 18420,
+    "activeTrails": 3,
+    "upcomingEvents": 5,
+    "avgOccupancy": 68
+  }
+}
