@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f172a;
+  /* Slate 900 */
+  --color-secondary: #0ea5e9;
+  /* Sky 500 - Ocean/Travel vibe */
+  --color-accent: #f0fdfa;
+  /* Teal 50 */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Texto base más oscuro para mejorar la legibilidad del contenido */
+  body {
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+}
