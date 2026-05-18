@@ -1,4 +1,4 @@
-# XYZ Templates
+# XYZ TEMPLATES
 
 Monorepo de templates web construido con **pnpm workspaces**.
 
