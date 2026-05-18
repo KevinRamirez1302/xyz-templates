@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Package, Menu, X, User, UserPlus } from 'lucide-react';
 
-interface NavbarProps {
-  onNavigate?: (section: string) => void;
-}
+interface NavbarProps {}
 
-export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
+export const Navbar: React.FC<NavbarProps> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [

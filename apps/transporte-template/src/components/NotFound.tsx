@@ -1,5 +1,4 @@
-import React from 'react';
-import { PackageX, ArrowLeft, Home, Search } from 'lucide-react';
+import { PackageX, Home, Search } from 'lucide-react';
 
 interface NotFoundProps {
   onGoHome: () => void;

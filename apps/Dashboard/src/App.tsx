@@ -1,10 +1,12 @@
 import { useState, useMemo } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { templates, type Category } from './types/template'
 import { SearchBar } from './components/SearchBar'
 import { CategoryFilter } from './components/CategoryFilter'
 import { TemplateGrid } from './components/TemplateGrid'
+import { ProjectFrame } from './components/ProjectFrame'
 
-function App() {
+function Home() {
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<Category | 'Todas'>('Todas')
 
@@ -75,6 +77,15 @@ function App() {
         </main>
       </div>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/templates/:slug" element={<ProjectFrame />} />
+    </Routes>
   )
 }
 

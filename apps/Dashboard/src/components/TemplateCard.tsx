@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { Template } from '../types/template'
 
 const gradients: Record<string, string> = {
@@ -9,6 +10,7 @@ const gradients: Record<string, string> = {
   Logística: 'from-secondary to-indigo-500',
   Restauración: 'from-primary to-red-500',
   'E-commerce': 'from-green-400 to-secondary',
+  Belleza: 'from-pink-400 to-rose-500',
 }
 
 interface TemplateCardProps {
@@ -20,19 +22,31 @@ export function TemplateCard({ template, index }: TemplateCardProps) {
   const gradient = gradients[template.category] ?? 'from-zinc-400 to-zinc-600'
 
   return (
-    <article
-      className="group relative overflow-hidden rounded-3xl border border-white/50 bg-white/40 backdrop-blur-lg shadow-soft transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-white/60 hover:shadow-2xl"
+    <Link
+      to={`/templates/${template.slug}`}
+      className="group relative overflow-hidden rounded-3xl border border-white/50 bg-white/40 backdrop-blur-lg shadow-soft transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-white/60 hover:shadow-2xl block"
       style={{
         animationDelay: `${index * 100}ms`,
       }}
     >
-      <div className={`aspect-video bg-gradient-to-br ${gradient} p-6 relative overflow-hidden`}>
+      <div className="aspect-video bg-gradient-to-br from-zinc-300 to-zinc-400 relative overflow-hidden">
+        {template.image ? (
+          <img
+            src={template.image}
+            alt={template.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        ) : (
+          <>
+            <div className={`absolute inset-0 bg-gradient-to-br ${gradient}`} />
+            <div className="relative flex h-full items-center justify-center">
+              <span className="text-5xl font-bold text-white/90 group-hover:scale-110 transition-transform duration-700">
+                {template.name.charAt(0)}
+              </span>
+            </div>
+          </>
+        )}
         <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="relative flex h-full items-center justify-center">
-          <span className="text-5xl font-bold text-white/90 group-hover:scale-110 transition-transform duration-700">
-            {template.name.charAt(0)}
-          </span>
-        </div>
       </div>
       <div className="p-6">
         <div className="mb-3 flex items-center gap-2">
@@ -47,6 +61,6 @@ export function TemplateCard({ template, index }: TemplateCardProps) {
           {template.description}
         </p>
       </div>
-    </article>
+    </Link>
   )
 }

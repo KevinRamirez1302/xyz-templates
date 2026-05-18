@@ -4,8 +4,12 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "pnpm --filter dashboard dev",
+    "dev:all": "concurrently -n dashboard,inmobiliaria,gimnasio,turismo,agencia,belleza,transporte -c blue,green,yellow,magenta,cyan,red,gray \"pnpm --filter dashboard dev\" \"pnpm --filter inmobiliaria_residencial dev\" \"pnpm --filter template-gimnasio dev\" \"pnpm --filter turismo-template dev\" \"pnpm --filter template-turismo dev\" \"pnpm --filter template-belleza dev\" \"pnpm --filter transporte-template dev\"",
     "build": "pnpm --filter dashboard build",
     "lint": "pnpm --filter dashboard lint",
     "preview": "pnpm --filter dashboard preview"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

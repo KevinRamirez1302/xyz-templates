@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Calculator, ArrowRight, Scale, Box, DollarSign, Info, MapPin, Truck, Check } from 'lucide-react';
+import { useState } from 'react';
+import { Calculator, ArrowRight, Scale, Box, Info, MapPin, Truck } from 'lucide-react';
 
 interface QuoteResult {
   actualWeight: number;
@@ -297,7 +297,9 @@ export const Cotizador: React.FC = () => {
                   <div className="flex justify-between items-center text-base border-b border-slate-800 pb-3">
                     <span className="text-slate-200 font-bold flex items-center gap-1.5">
                       Peso Facturable:
-                      <Info className="w-4 h-4 text-[#ff4c00] cursor-help" title="Se toma el mayor entre el peso físico y el volumétrico según estándares internacionales." />
+                      <span title="Se toma el mayor entre el peso físico y el volumétrico según estándares internacionales.">
+                        <Info className="w-4 h-4 text-[#ff4c00] cursor-help" />
+                      </span>
                     </span>
                     <span className="font-black text-[#ff4c00] text-lg">{result.billableWeight} {result.unit}</span>
                   </div>
