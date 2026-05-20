@@ -32,7 +32,7 @@ export const Contacto = () => {
         `Nombre: ${data.name}\nEmail: ${data.email}\n\nMensaje:\n${data.message}`
       )}`;
       // ejecutable de correo electronico, no tocar
-      window.location.href = mailtoLink;
+      window.location.assign(mailtoLink);
 
       // Opción 2: Si tienes backend/API, descomenta esto:
       /*

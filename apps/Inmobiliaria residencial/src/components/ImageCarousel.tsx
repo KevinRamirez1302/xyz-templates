@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+interface CarouselImage {
+    src: string;
+    alt?: string;
+}
+
 interface ImageCarouselProps {
-    images: string[];
+    images: (string | CarouselImage)[];
     title: string;
 }
 
@@ -39,11 +44,12 @@ export const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
             {/* Imagen principal */}
             <div className='relative h-48 overflow-hidden bg-gradient-to-br from-[#FEFFD2] to-[#FFBF78] rounded-lg'>
                 <img
-                    src={images[currentImageIndex]}
-                    alt={`${title} - Imagen ${currentImageIndex + 1}`}
+                    src={typeof images[currentImageIndex] === 'string' ? images[currentImageIndex] as string : (images[currentImageIndex] as CarouselImage).src}
+                    alt={typeof images[currentImageIndex] === 'string' ? `${title} - Imagen ${currentImageIndex + 1}` : ((images[currentImageIndex] as CarouselImage).alt || `${title} - Imagen ${currentImageIndex + 1}`)}
                     className='w-full h-full object-cover transition-opacity duration-300'
                     onError={(e) => {
-                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=Imagen+no+disponible';
+                        // Si la imagen no carga, ocultarla y mostrar mensaje
+                        (e.target as HTMLImageElement).style.display = 'none';
                     }}
                 />
             </div>
@@ -77,8 +83,8 @@ export const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
                             key={index}
                             onClick={() => goToImage(index)}
                             className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentImageIndex
-                                    ? 'bg-white w-6'
-                                    : 'bg-white/50 hover:bg-white/75'
+                                ? 'bg-white w-6'
+                                : 'bg-white/50 hover:bg-white/75'
                                 }`}
                             aria-label={`Ir a imagen ${index + 1}`}
                         />

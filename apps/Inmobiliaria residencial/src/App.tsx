@@ -10,12 +10,14 @@ import { Error404 } from './pages/Error404';
 import  PoliticasdePrivacidad  from './pages/politicas/PoliticasdePrivacidad';
 import Terminos from './pages/politicas/Terminos';
 import Cookies from './pages/politicas/Cookies';
+import ScrollToTop from './utils/ScrollTop';
 
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/SobreNosotros" element={<SobreNosotros />} />
