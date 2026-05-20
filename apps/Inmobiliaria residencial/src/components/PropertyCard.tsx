@@ -1,5 +1,11 @@
 
+import { useNavigate } from 'react-router-dom';
 import { ImageCarousel } from './ImageCarousel';
+
+interface PropertyImage {
+  src: string;
+  alt?: string;
+}
 
 interface Property {
   id: number;
@@ -8,8 +14,8 @@ interface Property {
   price: string;
   type: 'comprar' | 'alquilar';
   subtype: 'lujo' | 'costa' | 'urbano' | 'rustico';
-  images?: string[];
-  image?: string;
+  images?: (string | PropertyImage)[];
+  image?: string | PropertyImage;
   rooms: number;
   bathrooms: number;
   area: string;
@@ -20,6 +26,8 @@ interface PropertyCardProps {
 }
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {
+  const navigate = useNavigate();
+
   // Normalizar las imágenes: priorizar 'images' sobre 'image'
   const images = property.images && property.images.length > 0
     ? property.images
@@ -78,7 +86,26 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
         </div>
 
         {/* Botón */}
-        <button className='w-full bg-gradient-to-r from-[#FF7D29] to-[#FFBF78] hover:from-[#FFBF78] hover:to-[#FFEEA9] text-white font-bold py-2 px-4 rounded transition'>
+        <button 
+          onClick={() => {
+            const whatsappNumber = '34611057440'; // Mismo número que en Contacto.tsx
+            const message = `¡Hola! Me gustaría recibir más información sobre esta propiedad:
+*ID:* ${property.id}
+*Título:* ${property.title}
+*Ubicación:* ${property.location}
+*Precio:* ${property.price}
+*Tipo:* ${property.type}
+*Subtipo:* ${property.subtype}
+*Habitaciones:* ${property.rooms}
+*Baños:* ${property.bathrooms}
+*Área:* ${property.area}
+*Imagen:* ${images[0] ? (typeof images[0] === 'string' ? images[0] : images[0].src) : 'N/A'}`;
+
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+            navigate('/Contacto');
+          }}
+          className='w-full bg-linear-to-r from-[#FF7D29] to-[#FFBF78] hover:from-[#FFBF78] hover:to-[#FFEEA9] text-white font-bold py-2 px-4 rounded transition'
+        >
           Ver detalles
         </button>
       </div>
