@@ -7,7 +7,10 @@ export type Category =
   | "Logística"
   | "Restauración"
   | "E-commerce"
-  | "Belleza";
+  | "Belleza"
+  | "Educación"
+  | "Psicología"
+  | "Mascotas";
 
 export interface Template {
   id: string;
@@ -30,6 +33,9 @@ export const categories: Category[] = [
   "Restauración",
   "E-commerce",
   "Belleza",
+  "Educación",
+  "Psicología",
+  "Mascotas",
 ];
 
 export const templates: Template[] = [
@@ -53,7 +59,7 @@ export const templates: Template[] = [
     category: "Salud",
     image: "",
     tags: ["salud", "citas", "clínica"],
-    port: 0,
+    port: 5181,
   },
   {
     id: "energia-renovables",
@@ -75,7 +81,7 @@ export const templates: Template[] = [
     category: "Hotelería",
     image: "",
     tags: ["reservas", "turismo", "alojamiento"],
-    port: 0,
+    port: 5180,
   },
   {
     id: "inmobiliaria-comercial",
@@ -108,7 +114,7 @@ export const templates: Template[] = [
     category: "Logística",
     image: "",
     tags: ["envíos", "flotas", "tracking"],
-    port: 0,
+    port: 5179,
   },
   {
     id: "restaurante",
@@ -130,7 +136,7 @@ export const templates: Template[] = [
     category: "E-commerce",
     image: "",
     tags: ["tienda", "ventas", "productos"],
-    port: 0,
+    port: 5186,
   },
   {
     id: "template-gimnasio",
@@ -176,15 +182,49 @@ export const templates: Template[] = [
     tags: ["belleza", "estética", "salón"],
     port: 5178,
   },
+
   {
-    id: "transporte-template",
-    name: "Transporte",
-    slug: "transporte-template",
+    id: "template-salud",
+    name: "Salud (Vitalis)",
+    slug: "template-salud",
     description:
-      "Plataforma para empresas de transporte con seguimiento de envíos, cotizaciones en tiempo real y gestión de flotas.",
-    category: "Logística",
+      "Clínica de especialidades médicas con servicios de medicina general, pediatría, nutrición y fisioterapia.",
+    category: "Salud",
     image: "",
-    tags: ["transporte", "envíos", "logística"],
-    port: 5179,
+    tags: ["salud", "clínica", "vitalis", "citas"],
+    port: 5182,
+  },
+  {
+    id: "template-education",
+    name: "Educación",
+    slug: "template-education",
+    description:
+      "Sitio web institucional para colegios y academias con programas de estudios, admisiones y actividades.",
+    category: "Educación",
+    image: "",
+    tags: ["educación", "colegio", "programas", "clases"],
+    port: 5183,
+  },
+  {
+    id: "template-psicologia",
+    name: "Psicología",
+    slug: "template-psicologia",
+    description:
+      "Espacio profesional de psicología con perfiles de terapeutas, servicios terapéuticos y reservas online.",
+    category: "Psicología",
+    image: "",
+    tags: ["psicología", "terapia", "salud-mental", "consultas"],
+    port: 5184,
+  },
+  {
+    id: "template-mascotas",
+    name: "Mascotas (PetCare)",
+    slug: "template-mascotas",
+    description:
+      "Portal para clínica veterinaria y spa de mascotas con servicios médicos, peluquería y urgencias 24h.",
+    category: "Mascotas",
+    image: "",
+    tags: ["mascotas", "veterinaria", "petcare", "citas"],
+    port: 5185,
   },
 ];

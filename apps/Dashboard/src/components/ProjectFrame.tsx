@@ -12,6 +12,9 @@ const gradients: Record<string, string> = {
   Restauración: 'from-primary to-red-500',
   'E-commerce': 'from-green-400 to-secondary',
   Belleza: 'from-pink-400 to-rose-500',
+  Educación: 'from-blue-600 to-sky-400',
+  Psicología: 'from-indigo-600 to-purple-400',
+  Mascotas: 'from-emerald-600 to-teal-400',
 }
 
 export function ProjectFrame() {
