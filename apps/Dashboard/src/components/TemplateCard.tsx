@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import type { Template } from '../types/template'
 
@@ -20,6 +21,18 @@ interface TemplateCardProps {
 
 export function TemplateCard({ template, index }: TemplateCardProps) {
   const gradient = gradients[template.category] ?? 'from-zinc-400 to-zinc-600'
+  const [imgSrc, setImgSrc] = useState<string>(
+    template.image || new URL(`../assets/templates/${template.slug}.png`, import.meta.url).href
+  )
+  const [useFallback, setUseFallback] = useState(false)
+
+  const handleImageError = () => {
+    if (imgSrc.endsWith('.png')) {
+      setImgSrc(new URL(`../assets/templates/${template.slug}.jpg`, import.meta.url).href)
+    } else {
+      setUseFallback(true)
+    }
+  }
 
   return (
     <Link
@@ -30,10 +43,11 @@ export function TemplateCard({ template, index }: TemplateCardProps) {
       }}
     >
       <div className="aspect-video bg-gradient-to-br from-zinc-300 to-zinc-400 relative overflow-hidden">
-        {template.image ? (
+        {!useFallback ? (
           <img
-            src={template.image}
+            src={imgSrc}
             alt={template.name}
+            onError={handleImageError}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
         ) : (

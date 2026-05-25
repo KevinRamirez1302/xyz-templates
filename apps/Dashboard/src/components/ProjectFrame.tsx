@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { templates } from '../types/template'
 
@@ -16,6 +17,24 @@ const gradients: Record<string, string> = {
 export function ProjectFrame() {
   const { slug } = useParams<{ slug: string }>()
   const template = templates.find((t) => t.slug === slug)
+
+  const [imgSrc, setImgSrc] = useState<string>('')
+  const [useFallback, setUseFallback] = useState(false)
+
+  useEffect(() => {
+    if (template) {
+      setImgSrc(template.image || new URL(`../assets/templates/${template.slug}.png`, import.meta.url).href)
+      setUseFallback(false)
+    }
+  }, [template])
+
+  const handleImageError = () => {
+    if (imgSrc.endsWith('.png') && template) {
+      setImgSrc(new URL(`../assets/templates/${template.slug}.jpg`, import.meta.url).href)
+    } else {
+      setUseFallback(true)
+    }
+  }
 
   if (!template) {
     return (
@@ -106,10 +125,11 @@ export function ProjectFrame() {
 
         <main className="mx-auto max-w-4xl px-8 pt-32 pb-24">
           <div className="aspect-video rounded-3xl overflow-hidden mb-12 shadow-lg relative">
-            {template.image ? (
+            {!useFallback ? (
               <img
-                src={template.image}
+                src={imgSrc}
                 alt={template.name}
+                onError={handleImageError}
                 className="w-full h-full object-cover"
               />
             ) : (
