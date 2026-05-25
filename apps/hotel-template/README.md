@@ -126,7 +126,3 @@ El proyecto está configurado bajo el estándar de Vite con soporte para React, 
 * `tsconfig.app.json`: Configuración de TypeScript con la directiva `"allowJs": true` para asegurar la total compatibilidad con los componentes `.jsx`.
 
 ---
-
-## 📄 Licencia
-
-Este proyecto se distribuye bajo la licencia **MIT**. Eres libre de utilizar, modificar y adaptar esta plantilla para tus propios desarrollos comerciales o personales en el sector hotelero.
