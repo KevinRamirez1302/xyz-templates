@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --brand:      #0F766E; /* Teal 700 (Rigor médico/Iconografía) */
+  --brand-dark: #115E59; /* Teal 800 */
+  --accent:     #2563EB; /* Action Blue (Exclusivo para botones/CTAs) */
+  --dark:       #0F172A; /* Slate 900 */
+  --bg-warm:    #FFFFFF; /* Pure Stark White */
+  --bg-alt:     #F0FDFA; /* Soft Mint Background */
+  --bg-card:    #FFFFFF; 
+  --muted:      #475569; /* Slate 600 */
+  --white:      #FFFFFF;
+  --border-c:   #E2E8F0; /* Clean light slate border */
+  --border-teal: #CCFBF1; /* Light teal border */
+}
+
+.dark {
+  --brand:      #2DD4BF; /* Teal 400 */
+  --brand-dark: #0D9488;
+  --accent:     #3B82F6; /* Lighter Action Blue for Dark Mode */
+  --dark:       #F8FAFC; 
+  --bg-warm:    #0B0F17; 
+  --bg-alt:     #0D1D1E; /* Dark Teal Slate */
+  --bg-card:    #1E293B; 
+  --muted:      #94A3B8; 
+  --white:      #1E293B;
+  --border-c:   #334155; 
+  --border-teal: #115E59;
+}
+
+body {
+  background-color: var(--bg-warm);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+}
+
+@theme {
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  
+  --color-brand-cream: var(--bg-warm);
+  --color-brand-alt: var(--bg-alt);
+  --color-brand-terracotta: var(--brand);
+  --color-brand-terracotta-dark: var(--brand-dark);
+  --color-brand-sage: var(--brand);
+  --color-brand-sage-dark: var(--brand-dark);
+  --color-brand-gold: var(--accent);
+  --color-brand-gold-light: var(--accent);
+  --color-brand-charcoal: var(--dark);
+  --color-brand-dark-bg: var(--bg-warm);
+  --color-brand-card-dark: var(--bg-card);
+  --color-brand-border-dark: var(--muted);
+  --color-brand-border-light: var(--muted);
+  --color-border-teal: var(--border-teal);
+
+  --animate-fade-in: fade-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-up: slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-in: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-float-slow: float-slow 20s infinite alternate ease-in-out;
+  --animate-float-reverse: float-reverse 22s infinite alternate ease-in-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float-slow {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.04); }
+  100% { transform: translate(-15px, 30px) scale(0.98); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-30px, 35px) scale(0.96); }
+  100% { transform: translate(25px, -15px) scale(1.03); }
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism overrides to let the body aura gradient show through */
+.bg-white {
+  background-color: var(--white);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Focus styles for keyboard accessibility */
+*:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+.dark *:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Prevent layout shift */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom group hover micro-interactions for SVG icons inside highlighted card headers */
+.group:hover .h-12 svg,
+.group:hover .h-11 svg,
+.group:hover .h-10 svg,
+.group:hover .shrink-0 svg {
+  transform: scale(1.1) translateY(-2px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group .h-12 svg,
+.group .h-11 svg,
+.group .h-10 svg,
+.group .shrink-0 svg {
+  transition: transform 0.25s ease;
+}
+
+/* Smooth clean card transitions */
+.group {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* Thin Border Utility */
+.fine-border {
+  border: 1px solid var(--border-c);
+}
+
+.fine-border-b {
+  border-bottom: 1px solid var(--border-c);
+}
+
+.fine-border-t {
+  border-top: 1px solid var(--border-c);
+}
+
+.fine-border-r {
+  border-right: 1px solid var(--border-c);
+}
+
+.fine-border-l {
+  border-left: 1px solid var(--border-c);
+}
