@@ -15,6 +15,8 @@ const gradients: Record<string, string> = {
   Educación: 'from-blue-600 to-sky-400',
   Psicología: 'from-indigo-600 to-purple-400',
   Mascotas: 'from-emerald-600 to-teal-400',
+  Portfolio: 'from-violet-600 to-indigo-400',
+  Blog: 'from-orange-500 to-amber-400',
 }
 
 export function ProjectFrame() {
