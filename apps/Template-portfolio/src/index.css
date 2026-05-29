@@ -1,0 +1,230 @@
+/* CSS Reset & Variables */
+:root {
+  /* Colors */
+  --primary-h: 262;
+  --primary-s: 83%;
+  --primary-l: 58%;
+  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  --primary-hover: hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) - 8%));
+  --primary-light: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.1);
+  --primary-border: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.3);
+
+  --secondary-h: 160;
+  --secondary-s: 84%;
+  --secondary-l: 39%;
+  --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+  --secondary-hover: hsl(var(--secondary-h), var(--secondary-s), calc(var(--secondary-l) - 6%));
+  --secondary-light: hsla(var(--secondary-h), var(--secondary-s), var(--secondary-l), 0.1);
+
+  --bg: hsl(220, 25%, 97%);
+  --bg-card: hsl(0, 0%, 100%);
+  --bg-glass: rgba(255, 255, 255, 0.75);
+  
+  --text: hsl(220, 16%, 36%);
+  --text-h: hsl(220, 24%, 12%);
+  --border: hsl(220, 15%, 89%);
+  
+  --error: hsl(0, 72%, 51%);
+  --error-bg: hsl(0, 86%, 97%);
+  --success: hsl(142, 69%, 29%);
+  --success-bg: hsl(142, 70%, 95%);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.15);
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, monospace;
+
+  /* Global Settings */
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark Mode Variables Override */
+.dark {
+  --bg: hsl(222, 23%, 9%);
+  --bg-card: hsl(222, 20%, 14%);
+  --bg-glass: rgba(15, 23, 42, 0.75);
+  
+  --text: hsl(220, 13%, 69%);
+  --text-h: hsl(220, 20%, 96%);
+  --border: hsl(222, 16%, 20%);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 25px hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.25);
+  
+  --error-bg: hsl(0, 62%, 13%);
+  --success-bg: hsl(142, 62%, 10%);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-h);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Accessibility: Focus visible outline styling */
+*:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* Sections Global Layout */
+section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+  background-color: var(--bg-card);
+  color: var(--text-h);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg);
+  border-color: var(--primary-border);
+  transform: translateY(-2px);
+}
+
+/* Divider Ticks */
+.ticks {
+  height: 1px;
+  background-color: var(--border);
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: calc(100% - 48px);
+}
+
+.ticks::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--border);
+  transform: rotate(45deg);
+}
+
+.ticks::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--border);
+  transform: rotate(45deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 16px;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}

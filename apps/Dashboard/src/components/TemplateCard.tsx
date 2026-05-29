@@ -3,18 +3,16 @@ import { Link } from 'react-router-dom'
 import type { Template } from '../types/template'
 
 const gradients: Record<string, string> = {
-  Dashboard: 'from-primary to-primary-light',
   Salud: 'from-secondary to-secondary-light',
-  Energía: 'from-primary to-amber-500',
   Hotelería: 'from-secondary to-blue-500',
   Inmobiliaria: 'from-tertiary to-purple-500',
   Logística: 'from-secondary to-indigo-500',
-  Restauración: 'from-primary to-red-500',
   'E-commerce': 'from-green-400 to-secondary',
   Belleza: 'from-pink-400 to-rose-500',
   Educación: 'from-blue-600 to-sky-400',
   Psicología: 'from-indigo-600 to-purple-400',
   Mascotas: 'from-emerald-600 to-teal-400',
+  Portfolio: 'from-violet-600 to-indigo-400',
 }
 
 interface TemplateCardProps {
@@ -45,13 +43,13 @@ export function TemplateCard({ template, index }: TemplateCardProps) {
         animationDelay: `${index * 100}ms`,
       }}
     >
-      <div className="aspect-video bg-gradient-to-br from-zinc-300 to-zinc-400 relative overflow-hidden">
+      <div className="relative overflow-hidden" style={{ height: '320px' }}>
         {!useFallback ? (
           <img
             src={imgSrc}
             alt={template.name}
             onError={handleImageError}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
           />
         ) : (
           <>
@@ -65,7 +63,7 @@ export function TemplateCard({ template, index }: TemplateCardProps) {
         )}
         <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
-      <div className="p-6">
+      <div className="p-8">
         <div className="mb-3 flex items-center gap-2">
           <span className="inline-flex rounded-full bg-white/90 backdrop-blur px-3 py-1 text-xs font-bold shadow-sm text-zinc-700">
             {template.category}
