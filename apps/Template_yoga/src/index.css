@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Paleta Zen de Verdes Salvia (Naturaleza, calma) */
+  --color-brand-50: hsl(145, 30%, 96%);
+  --color-brand-100: hsl(145, 25%, 90%);
+  --color-brand-200: hsl(145, 20%, 80%);
+  --color-brand-300: hsl(145, 18%, 70%);
+  --color-brand-400: hsl(145, 18%, 55%);
+  --color-brand-500: hsl(145, 18%, 42%); /* Verde Salvia Principal */
+  --color-brand-600: hsl(145, 20%, 35%);
+  --color-brand-700: hsl(145, 22%, 28%);
+  --color-brand-800: hsl(145, 24%, 20%);
+  --color-brand-900: hsl(145, 26%, 15%);
+
+  /* Paleta Zen de Terracota/Arena Cálido (Tierra, enraizamiento) */
+  --color-terracotta-50: hsl(22, 50%, 96%);
+  --color-terracotta-100: hsl(22, 45%, 92%);
+  --color-terracotta-200: hsl(22, 40%, 82%);
+  --color-terracotta-300: hsl(22, 38%, 72%);
+  --color-terracotta-400: hsl(22, 38%, 62%);
+  --color-terracotta-500: hsl(22, 38%, 56%); /* Terracota Acento */
+  --color-terracotta-600: hsl(22, 40%, 48%);
+  --color-terracotta-700: hsl(22, 42%, 40%);
+  --color-terracotta-800: hsl(22, 45%, 32%);
+  --color-terracotta-900: hsl(22, 48%, 24%);
+
+  /* Tonos neutros cálidos */
+  --color-sand-50: hsl(36, 40%, 98%);     /* Color de fondo por defecto */
+  --color-sand-100: hsl(36, 33%, 95%);
+  --color-sand-200: hsl(36, 25%, 88%);
+  --color-sand-300: hsl(36, 20%, 80%);
+  --color-sand-400: hsl(36, 18%, 68%);
+  --color-sand-500: hsl(36, 15%, 55%);
+  --color-sand-600: hsl(36, 15%, 45%);
+  --color-sand-700: hsl(36, 18%, 35%);
+  --color-sand-800: hsl(36, 20%, 25%);
+  --color-sand-900: hsl(36, 22%, 15%);
+}
+
+@layer base {
+  html, body {
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Clases de utilidad específicas para el efecto Zen */
+.glass-nav {
+  background-color: rgba(250, 249, 246, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-nav {
+  background-color: rgba(18, 20, 19, 0.95);
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Ocultar barra de scroll pero mantener funcionalidad */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
