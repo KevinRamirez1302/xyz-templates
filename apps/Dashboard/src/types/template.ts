@@ -227,4 +227,15 @@ export const templates: Template[] = [
     tags: ["mascotas", "veterinaria", "petcare", "citas"],
     port: 5185,
   },
+  {
+    id: "template-yoga",
+    name: "Yoga (Prana)",
+    slug: "template-yoga",
+    description:
+      "Sitio web para centros de yoga y meditación, con horarios de clases, instructores y reserva de sesiones.",
+    category: "Salud",
+    image: "",
+    tags: ["yoga", "meditación", "bienestar", "clases", "salud"],
+    port: 5187,
+  },
 ];
