@@ -1,16 +1,14 @@
 export type Category =
-  | "Dashboard"
   | "Salud"
-  | "Energía"
   | "Hotelería"
   | "Inmobiliaria"
   | "Logística"
-  | "Restauración"
   | "E-commerce"
   | "Belleza"
   | "Educación"
   | "Psicología"
-  | "Mascotas";
+  | "Mascotas"
+  | "Portfolio";
 
 export interface Template {
   id: string;
@@ -24,32 +22,19 @@ export interface Template {
 }
 
 export const categories: Category[] = [
-  "Dashboard",
   "Salud",
-  "Energía",
   "Hotelería",
   "Inmobiliaria",
   "Logística",
-  "Restauración",
   "E-commerce",
   "Belleza",
   "Educación",
   "Psicología",
   "Mascotas",
+  "Portfolio",
 ];
 
 export const templates: Template[] = [
-  {
-    id: "dashboard",
-    name: "Dashboard",
-    slug: "dashboard",
-    description:
-      "Panel de control analítico con métricas en tiempo real, gráficos interactivos y gestión de datos empresariales.",
-    category: "Dashboard",
-    image: "",
-    tags: ["analytics", "métricas", "dashboard"],
-    port: 0,
-  },
   {
     id: "template-clinicadental",
     name: "Clínica Dental",
@@ -62,17 +47,6 @@ export const templates: Template[] = [
     port: 5181,
   },
   {
-    id: "energia-renovables",
-    name: "Energía Renovable",
-    slug: "energia-renovables",
-    description:
-      "Plataforma informativa para empresas de energía limpia con calculadoras de ahorro y catálogo de soluciones.",
-    category: "Energía",
-    image: "",
-    tags: ["energía", "sostenibilidad", "solar"],
-    port: 0,
-  },
-  {
     id: "hotel",
     name: "Hotel",
     slug: "hotel",
@@ -82,17 +56,6 @@ export const templates: Template[] = [
     image: "",
     tags: ["reservas", "turismo", "alojamiento"],
     port: 5180,
-  },
-  {
-    id: "inmobiliaria-comercial",
-    name: "Inmobiliaria Comercial",
-    slug: "inmobiliaria-comercial",
-    description:
-      "Portal inmobiliario para propiedades comerciales con filtros avanzados y mapas interactivos.",
-    category: "Inmobiliaria",
-    image: "",
-    tags: ["comercial", "oficinas", "locales"],
-    port: 0,
   },
   {
     id: "inmobiliaria-residencial",
@@ -115,17 +78,6 @@ export const templates: Template[] = [
     image: "",
     tags: ["envíos", "flotas", "tracking"],
     port: 5179,
-  },
-  {
-    id: "restaurante",
-    name: "Restaurante",
-    slug: "restaurante",
-    description:
-      "Web para restaurantes con menú digital, reservas online, sistema de pedidos y galería gastronómica.",
-    category: "Restauración",
-    image: "",
-    tags: ["menú", "reservas", "gastronomía"],
-    port: 0,
   },
   {
     id: "tienda-online",
@@ -237,5 +189,16 @@ export const templates: Template[] = [
     image: "",
     tags: ["yoga", "meditación", "bienestar", "clases", "salud"],
     port: 5187,
+  },
+  {
+    id: "template-portfolio",
+    name: "Portfolio",
+    slug: "template-portfolio",
+    description:
+      "Portafolio personal profesional con showcase de proyectos, habilidades y sección de contacto.",
+    category: "Portfolio",
+    image: "",
+    tags: ["portfolio", "proyectos", "personal", "cv"],
+    port: 5188,
   },
 ];

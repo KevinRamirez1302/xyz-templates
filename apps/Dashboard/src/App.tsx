@@ -36,7 +36,7 @@ function Home() {
 
       <div className="relative z-10">
         <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-sm bg-white/80 border-b border-zinc-200/50">
-          <div className="mx-auto max-w-6xl px-8 py-4 flex items-center justify-between">
+          <div className="w-full max-w-screen-2xl mx-auto px-12 py-4 flex items-center justify-between">
             <div>
               <h1 className="text-xl font-bold tracking-tight">
                 <span className="text-primary">xyz</span>
@@ -52,7 +52,7 @@ function Home() {
           </div>
         </header>
 
-        <main className="mx-auto max-w-6xl px-8 pt-32 pb-24">
+        <main className="w-full max-w-screen-2xl mx-auto px-12 pt-32 pb-24">
           <div className="text-center mb-16 animate-fade-up">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
               Catálogo de plantillas
