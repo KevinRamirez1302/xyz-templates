@@ -8,7 +8,8 @@ export type Category =
   | "Educación"
   | "Psicología"
   | "Mascotas"
-  | "Portfolio";
+  | "Portfolio"
+  | "Blog";
 
 export interface Template {
   id: string;
@@ -32,6 +33,7 @@ export const categories: Category[] = [
   "Psicología",
   "Mascotas",
   "Portfolio",
+  "Blog",
 ];
 
 export const templates: Template[] = [
@@ -200,5 +202,16 @@ export const templates: Template[] = [
     image: "",
     tags: ["portfolio", "proyectos", "personal", "cv"],
     port: 5188,
+  },
+  {
+    id: "template-blog",
+    name: "Blog",
+    slug: "template-blog",
+    description:
+      "Sitio web interactivo de blog con categorías de artículos, panel de lectura y comentarios.",
+    category: "Blog",
+    image: "",
+    tags: ["blog", "artículos", "noticias", "lectura"],
+    port: 5189,
   },
 ];

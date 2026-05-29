@@ -13,6 +13,7 @@ const gradients: Record<string, string> = {
   Psicología: 'from-indigo-600 to-purple-400',
   Mascotas: 'from-emerald-600 to-teal-400',
   Portfolio: 'from-violet-600 to-indigo-400',
+  Blog: 'from-orange-500 to-amber-400',
 }
 
 interface TemplateCardProps {
