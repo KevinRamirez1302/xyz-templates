@@ -51,9 +51,9 @@ export const templates: Template[] = [
     port: 0,
   },
   {
-    id: "clinica-dental",
+    id: "template-clinicadental",
     name: "Clínica Dental",
-    slug: "clinica-dental",
+    slug: "template-clinicadental",
     description:
       "Sitio web profesional para clínicas dentales con sistema de citas, servicios y perfiles de especialistas.",
     category: "Salud",
