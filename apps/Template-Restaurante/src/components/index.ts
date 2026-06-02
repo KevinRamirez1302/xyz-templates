@@ -1,0 +1,7 @@
+export { Header } from './Header'
+export { Hero } from './Hero'
+export { About } from './About'
+export { Menu } from './Menu'
+export { Services } from './Services'
+export { Contact } from './Contact'
+export { Footer } from './Footer'

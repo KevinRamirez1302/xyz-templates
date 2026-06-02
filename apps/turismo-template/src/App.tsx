@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { DataProvider } from './context/DataContext';
 import PublicSite from './pages/PublicSite';
+import RestaurantePage from './pages/RestaurantePage';
 import Dashboard from './pages/Dashboard';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -26,6 +27,7 @@ const App: React.FC = () => {
               </ProtectedRoute>
             } 
           />
+          <Route path="/restaurante" element={<RestaurantePage />} />
           {/* Catch-all to show beautiful 404 page */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -10,7 +10,8 @@ export type Category =
   | "Mascotas"
   | "Portfolio"
   | "Blog"
-  | "ONG";
+  | "ONG"
+  | "Restauración";
 
 export interface Template {
   id: string;
@@ -36,6 +37,7 @@ export const categories: Category[] = [
   "Portfolio",
   "Blog",
   "ONG",
+  "Restauración",
 ];
 
 export const templates: Template[] = [
@@ -226,5 +228,16 @@ export const templates: Template[] = [
     image: "/templates/template-ong.png",
     tags: ["ong", "donaciones", "voluntariado", "ambiental"],
     port: 5190,
+  },
+  {
+    id: "template-restaurante",
+    name: "Restaurante",
+    slug: "template-restaurante",
+    description:
+      "Sitio web para restaurantes con menú digital, reservas online, galería de platos y sistema de pedidos.",
+    category: "Restauración",
+    image: "/templates/template-restaurante.png",
+    tags: ["restaurante", "comida", "reservas", "menú"],
+    port: 5191,
   },
 ];
