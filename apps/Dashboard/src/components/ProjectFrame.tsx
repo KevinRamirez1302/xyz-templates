@@ -9,7 +9,7 @@ const gradients: Record<string, string> = {
   Hotelería: 'from-secondary to-blue-500',
   Inmobiliaria: 'from-tertiary to-purple-500',
   Logística: 'from-secondary to-indigo-500',
-  Restauración: 'from-primary to-red-500',
+  Restauración: 'from-orange-600 to-red-500',
   'E-commerce': 'from-green-400 to-secondary',
   Belleza: 'from-pink-400 to-rose-500',
   Educación: 'from-blue-600 to-sky-400',

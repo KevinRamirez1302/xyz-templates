@@ -78,12 +78,27 @@ const Navbar: React.FC = () => {
                 {item.label}
               </a>
             ))}
+            <Link
+              to="/restaurante"
+              className="nav-link"
+              style={{
+                padding: '8px 16px',
+                borderRadius: 'var(--radius-sm)',
+                color: 'var(--gray-400)',
+                fontSize: '0.9rem',
+                fontWeight: 500,
+                transition: 'var(--transition)',
+                textDecoration: 'none',
+              }}
+            >
+              Restaurante
+            </Link>
           </nav>
         )}
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           {isDashboard && (
-            <Link to="/" className="btn btn-secondary btn-sm" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <Link to="/restaurante" className="btn btn-secondary btn-sm" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <ExternalLink size={15} /> Ver Portal
             </Link>
           )}
@@ -135,6 +150,21 @@ const Navbar: React.FC = () => {
               {item.label}
             </a>
           ))}
+          <Link
+            to="/restaurante"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              display: 'block',
+              padding: '14px 0',
+              color: 'var(--gray-400)',
+              fontSize: '1rem',
+              fontWeight: 500,
+              borderBottom: '1px solid var(--border)',
+              textDecoration: 'none',
+            }}
+          >
+            Restaurante
+          </Link>
         </div>
       )}
 
