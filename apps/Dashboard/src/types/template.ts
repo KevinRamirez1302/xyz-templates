@@ -9,7 +9,8 @@ export type Category =
   | "Psicología"
   | "Mascotas"
   | "Portfolio"
-  | "Blog";
+  | "Blog"
+  | "ONG";
 
 export interface Template {
   id: string;
@@ -34,6 +35,7 @@ export const categories: Category[] = [
   "Mascotas",
   "Portfolio",
   "Blog",
+  "ONG",
 ];
 
 export const templates: Template[] = [
@@ -213,5 +215,16 @@ export const templates: Template[] = [
     image: "",
     tags: ["blog", "artículos", "noticias", "lectura"],
     port: 5189,
+  },
+  {
+    id: "template-ong",
+    name: "ONG EcoVida",
+    slug: "template-ong",
+    description:
+      "Sitio web para organizaciones sin ánimo de lucro con sistema de donaciones, proyectos activos y voluntariado.",
+    category: "ONG",
+    image: "/templates/template-ong.png",
+    tags: ["ong", "donaciones", "voluntariado", "ambiental"],
+    port: 5190,
   },
 ];
