@@ -14,6 +14,7 @@ const gradients: Record<string, string> = {
   Mascotas: 'from-emerald-600 to-teal-400',
   Portfolio: 'from-violet-600 to-indigo-400',
   Blog: 'from-orange-500 to-amber-400',
+  ONG: 'from-emerald-500 to-teal-600',
 }
 
 interface TemplateCardProps {
